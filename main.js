@@ -1,71 +1,88 @@
-const controle = document.querySelectorAll('.controle-ajuste');
-const estatisticas = document.querySelectorAll('[data-estatistica]')
+/* FUNÇÃO PARA CADA TECLA
 
-
-const pecas = {
-    "bracos": {
-        "forca": 29,
-        "poder": 35,
-        "energia": -21,
-        "velocidade": -5
-    },
-
-    "blindagem": {
-        "forca": 41,
-        "poder": 20,
-        "energia": 0,
-        "velocidade": -20
-    },
-    "nucleos":{
-        "forca": 0,
-        "poder": 7,
-        "energia": 48,
-        "velocidade": -24
-    },
-    "pernas":{
-        "forca": 27,
-        "poder": 21,
-        "energia": -32,
-        "velocidade": 42
-    },
-    "foguetes":{
-        "forca": 0,
-        "poder": 28,
-        "energia": 0,
-        "velocidade": -2
-    }
+function pom(){
+    document.getElementById('som_tecla_pom').play()
 }
 
-controle.forEach((elementoControle)=>{
-    elementoControle.addEventListener('click', ()=>{  
+function clap(){
+    document.getElementById('som_tecla_clap').play()
+}
 
-        if(elementoControle.attributes[1].nodeValue === "subtrair"){
-            elementoControle.parentElement.children[1].value --
+function tim(){
+    document.getElementById('som_tecla_tim').play()
+}
 
-            estatisticas.forEach((elementoEstatisticas)=>{
-                elementoEstatisticas.textContent = 
-                    parseInt(elementoEstatisticas.textContent) - 
-                    pecas[elementoControle.attributes[2].nodeValue][elementoEstatisticas.attributes[1].value]
-            })
+function puff(){
+    document.getElementById('som_tecla_puff').play()
+}
 
-        }else{
-            elementoControle.parentElement.children[1].value ++
+function splash(){
+    document.getElementById('som_tecla_splash').play()
+}
 
-            estatisticas.forEach((elementoEstatisticas)=>{
-                elementoEstatisticas.textContent = 
-                    parseInt(elementoEstatisticas.textContent) + 
-                    pecas[elementoControle.attributes[2].nodeValue][elementoEstatisticas.attributes[1].value]
-            })
+function toim(){
+    document.getElementById('som_tecla_toim').play()
+}
 
+function psh(){
+    document.getElementById('som_tecla_psh').play()
+}
+
+function tic(){
+    document.getElementById('som_tecla_tic').play()
+}
+
+function tom(){
+    document.getElementById('som_tecla_tom').play()
+}
+
+
+//ESTRUTURA WHILE
+
+// while(i < teclado.length){
+//     const som = teclado[i].classList[1];
+//     teclado[i].onclick = ()=>{
+//         tocar(`som_${som}`)
+//     }
+//     i++
+// }
+
+
+*/
+
+const teclado = document.querySelectorAll('.tecla');
+
+ function tocar(id){
+     const elemento = document.querySelector(id);
+
+    if(elemento != null && elemento.localName === 'audio'){
+        elemento.play();
+    }
+
+    else{
+        console.log(`Elemento: ${elemento} não identificado.`);
+    }
+     
+ };
+
+for(let i = 0; i < teclado.length; i++){
+    const som = `#som_${teclado[i].classList[1]}`;
+
+    teclado[i]  .onclick = ()=>{
+        tocar(som)
+    };
+
+    teclado[i].onkeydown = (Evento)=>{
+        if(Evento.code === 'Space' || Evento.code === 'Enter'){
+            teclado[i].classList.add('ativa');
+        }
+       
+       }
+    
+    teclado[i].onkeyup = ()=>{
+        teclado[i].classList.remove('ativa');
+       
         }
 
-       /* estatisticas.forEach((elementoEstatisticas)=>{
-            elementoEstatisticas.textContent = 
-                parseInt(elementoEstatisticas.textContent) + 
-                pecas[elementoControle.attributes[2].nodeValue][elementoEstatisticas.attributes[1].value]
-        })*/
-    })
- 
-})
-
-
+        
+}

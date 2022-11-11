@@ -1,104 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" type="image/jpg" href="img/favicon.ico"/>
-    <title>Robotron 2000</title>
 
-    <link rel="stylesheet" href="css/style.css">
+    <title>Alura MIDI</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300;500&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
+
+    <link rel="icon" type="image/png" href="images/bateria.png">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/estilos.css">
+    
 </head>
 <body>
-    <main>
-        <section class="robotron">
-            <img class="robo" id="robotron" src="img/Robotron 2000 - Preto-20221107T132648Z-001/Robotron 2000 - Preto/robotron.png" alt="Robotron">
-            <figcaption class="titulo">ROBOTRON <br>2000</figcaption>
-        </section>
 
-        <section class="box estatisticas">
-            <div class="estatistica">
-                <p class="estatistica-titulo">Força</p>
-                <div class="estatistica-valor">
-                    <p class="estatistica-numero" data-estatistica="forca">0</p>
-                </div>
-            </div>
-            <div class="estatistica">
-                <p class="estatistica-titulo">Poder</p>
-                <div class="estatistica-valor">
-                    <p class="estatistica-numero" data-estatistica="poder">0</p>
-                </div>
-            </div>
-            <div class="estatistica">
-                <p class="estatistica-titulo">Energia</p>
-                <div class="estatistica-valor">
-                    <p class="estatistica-numero" data-estatistica="energia">0</p>
-                </div>
-            </div>
-            <div class="estatistica">
-                <p class="estatistica-titulo">Velocidade</p>
-                <div class="estatistica-valor">
-                    <p class="estatistica-numero" data-estatistica="velocidade">0</p>
-                </div>
-            </div>
-        </section>
+    <h1>Alura Midi</h1>
 
-        <section class="equipamentos">
-            <form action="" class="montador">
-                <div class="box montador-conteudo">
-                    <div class="peca">
-                        <label for="" class="peca-titulo">Braços</label>
-                        <div class="controle">
-                            <buttom class="controle-ajuste" id="subtrair" data-pecas="bracos">-</buttom>
-                            <input type="text" class="controle-contador" value="0">
-                            <buttom class="controle-ajuste" id="adicionar" data-pecas="bracos">+</buttom>
-                        </div>
-                    </div>
-                    <hr class="linha">
-                    <div class="peca">
-                        <label for="" class="peca-titulo">Blindagem</label>
-                        <div class="controle">
-                            <buttom class="controle-ajuste" id="subtrair" data-pecas="blindagem">-</buttom>
-                            <input type="text" class="controle-contador" value="0">
-                            <buttom class="controle-ajuste" id="adicionar" data-pecas="blindagem">+</buttom>
-                        </div>
-                    </div>
-                    <hr class="linha">
-                    <div class="peca">
-                        <label for="" class="peca-titulo">Núcleos</label>
-                        <div class="controle">
-                            <buttom class="controle-ajuste" id="subtrair" data-pecas="nucleos">-</buttom>
-                            <input type="text" class="controle-contador" value="0">
-                            <buttom class="controle-ajuste" id="adicionar" data-pecas="nucleos">+</buttom>
-                        </div>
-                    </div>
-                    <hr class="linha">
-                    <div class="peca">
-                        <label for="" class="peca-titulo">Pernas</label>
-                        <div class="controle">
-                            <buttom class="controle-ajuste" id="subtrair" data-pecas="pernas">-</buttom>
-                            <input type="text" class="controle-contador" value="0">
-                            <buttom class="controle-ajuste" id="adicionar" data-pecas="pernas">+</buttom>
-                        </div>
-                    </div>
-                    <hr class="linha">
-                    <div class="peca">
-                        <label for="" class="peca-titulo">Foguetes</label>
-                        <div class="controle">
-                            <buttom class="controle-ajuste" id="subtrair" data-pecas="foguetes">-</buttom>
-                            <input type="text" class="controle-contador" value="0">
-                            <buttom class="controle-ajuste" id="adicionar" data-pecas="foguetes">+</buttom>
-                        </div>
-                    </div>
-                </div>
-                <input type="submit" value="Iniciar produção" class="producao" id="producao">
-            </form>
-        </section>
-    </main>
+    <section class="teclado">
+        <button class="tecla tecla_pom">Pom</button>
+        <button class="tecla tecla_clap">Clap</button>
+        <button class="tecla tecla_tim">Tim</button>
+
+        <button class="tecla tecla_puff">Puff</button>
+        <button class="tecla tecla_splash">Splash</button>
+        <button class="tecla tecla_toim">Toim</button>
+
+        <button class="tecla tecla_psh">Psh</button>
+        <button class="tecla tecla_tic">Tic</button>
+        <button class="tecla tecla_tom">Tom</button>
+    </section>
+
+    <audio  src="sounds/keyq.wav" id="som_tecla_pom"></audio>
+    <audio  src="sounds/keyw.wav" id="som_tecla_clap"></audio>
+    <audio  src="sounds/keye.wav" id="som_tecla_tim"></audio>
+    <audio  src="sounds/keya.wav" id="som_tecla_puff"></audio>
+    <audio  src="sounds/keys.wav" id="som_tecla_splash"></audio>
+    <audio  src="sounds/keyd.wav" id="som_tecla_toim"></audio>
+    <audio  src="sounds/keyz.wav" id="som_tecla_psh"></audio>
+    <audio  src="sounds/keyx.wav" id="som_tecla_tic"></audio>
+    <audio  src="sounds/keyc.wav" id="som_tecla_tom"></audio>
 
     <script src="main.js"></script>
+
+
+
 </body>
 </html>
